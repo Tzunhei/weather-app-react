@@ -1,0 +1,61 @@
+html, body {
+  background-color: $main-bg-color;
+}
+
+// Header Styling
+
+header {
+  background-color: $header-bg-color;
+  padding: 1rem;
+  text-align: center;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+
+  .nav-link {
+    background-color: $main-bg-color;
+    padding: .5rem;
+  }
+
+  .active-nav-link {
+    background-color: $active-bg-color;
+  }
+
+}
+
+// Main content Styling
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.info-container {
+  padding: 2rem;
+  text-align: center;
+
+  & * {
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .temperature-info{
+    font-size: 5rem;
+  }
+
+}
+
+.extra-info-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+// Footer Styling
+
+footer {
+  text-align: center;
+  padding: 1rem;
+}

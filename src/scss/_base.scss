@@ -1,0 +1,53 @@
+// Variables
+
+$main-font: "Livvic", Helvetica, Arial, sans-serif;
+$main-title-font: "Poiret One", Helvetica, Arial, sans-serif;
+
+$white: #fff;
+
+$main-bg-color: #f5f5f5;
+$header-bg-color: #90caf9;
+
+$active-bg-color: #00c853;
+
+// Mixins
+
+// Main Styling
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color:inherit;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+  // Typography
+
+h1 {
+  font-size: 3rem;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+h1, h2 {
+  font-family: $main-title-font;
+}
+
+p, ul, li {
+  font-family: $main-font;
+  font-size: 1.1rem;
+}
