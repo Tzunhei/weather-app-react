@@ -8,7 +8,9 @@ $white: #fff;
 $main-bg-color: #f5f5f5;
 $header-bg-color: #90caf9;
 
-$active-bg-color: #00c853;
+$active-bg-color: #ffee58;
+
+$secondary-tbl-color: #ffee58;
 
 // Mixins
 
@@ -47,7 +49,19 @@ h1, h2 {
   font-family: $main-title-font;
 }
 
-p, ul, li {
+p, table, ul, li {
   font-family: $main-font;
   font-size: 1.1rem;
+}
+
+// Table Styling
+
+table {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+}
+
+tr {
+  height: 4rem;
 }

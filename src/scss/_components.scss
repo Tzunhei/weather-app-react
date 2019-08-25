@@ -1,0 +1,12 @@
+.table-container {
+  border-collapse: collapse;
+
+  th {
+    background-color: $header-bg-color;
+  }
+
+  tr:nth-child(even) {
+    background-color: $secondary-tbl-color;
+  }
+
+}

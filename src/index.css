@@ -22,9 +22,17 @@ h2 {
 h1, h2 {
   font-family: "Poiret One", Helvetica, Arial, sans-serif; }
 
-p, ul, li {
+p, table, ul, li {
   font-family: "Livvic", Helvetica, Arial, sans-serif;
   font-size: 1.1rem; }
+
+table {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center; }
+
+tr {
+  height: 4rem; }
 
 html, body {
   background-color: #f5f5f5; }
@@ -41,7 +49,7 @@ header {
     background-color: #f5f5f5;
     padding: .5rem; }
   .nav-container .active-nav-link {
-    background-color: #00c853; }
+    background-color: #ffee58; }
 
 main {
   display: flex;
@@ -61,8 +69,19 @@ main {
   display: flex;
   justify-content: space-around; }
 
+.table-container {
+  margin: 2rem;
+  padding: 2rem; }
+
 footer {
   text-align: center;
   padding: 1rem; }
+
+.table-container {
+  border-collapse: collapse; }
+  .table-container th {
+    background-color: #90caf9; }
+  .table-container tr:nth-child(even) {
+    background-color: #ffee58; }
 
 /*# sourceMappingURL=index.css.map */
