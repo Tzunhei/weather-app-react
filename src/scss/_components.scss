@@ -10,3 +10,19 @@
   }
 
 }
+
+.btn-temp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+
+  .btn-temp {
+    margin-top: 1rem;
+    padding: .5rem;
+    background-color: $main-bg-color;
+    border: none;
+  }
+
+}
+

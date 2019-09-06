@@ -1,6 +1,6 @@
 import React from "react";
 
-const Hourly = ({ data }) => {
+const Hourly = ({ data, unit }) => {
   
   if (!data) {
     return <p>Loading...</p>;
@@ -14,6 +14,10 @@ const Hourly = ({ data }) => {
 
   const formatToPercentage = (value) => {
     return Math.trunc(value * 100);
+  }
+
+  const convertToF = (celsius) => {
+    return Math.floor(celsius * (9/5) + 32);
   }
 
   return (
@@ -35,7 +39,7 @@ const Hourly = ({ data }) => {
             return (
               <tr key={data.time} className="table-row">
                 <td>{`${hour}:00`}</td>
-                <td>{formatTemperature(hourlyWeather.temperature)} C°</td>
+                <td>{unit==="celsius" ? formatTemperature(hourlyWeather.temperature) : formatTemperature(convertToF(hourlyWeather.temperature))} {unit==="celsius" ? "C°" : "F°"}</td>
                 <td>{formatToPercentage(hourlyWeather.humidity)} %</td>
                 <td>{formatToPercentage(hourlyWeather.precipProbability)} %</td>
                 <td>{hourlyWeather.summary}</td>

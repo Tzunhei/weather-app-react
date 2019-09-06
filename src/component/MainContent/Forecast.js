@@ -1,6 +1,6 @@
 import React from "react";
 
-const Forecast = ({ data }) => {
+const Forecast = ({ data, unit }) => {
   const dayOfWeekIndex = {
     0: "Sunday",
     1: "Monday",
@@ -34,6 +34,10 @@ const Forecast = ({ data }) => {
     return Math.trunc(value * 100);
   }
 
+  const convertToF = (celsius) => {
+    return Math.floor(celsius * (9/5) + 32);
+  }
+
   if (!data) return null;
 
   return (
@@ -56,10 +60,10 @@ const Forecast = ({ data }) => {
             const dayNumber = forecastDate.getDate();
             const month = monthIndex[forecastDate.getMonth()];
             return (
-              <tr className="table-row">
+              <tr key={day.time} className="table-row">
                 <td>{`${dayOfWeek} ${dayNumber} ${month}`}</td>
-                <td>{formatTemperature(day.temperatureLow)} C°</td>
-                <td>{formatTemperature(day.temperatureHigh)} C°</td>
+                <td>{unit==="celsius" ? formatTemperature(day.temperatureLow) : convertToF(formatTemperature(day.temperatureLow))} {unit==="celsius" ? "C°" : "F°"}</td>
+                <td>{unit==="celsius" ? formatTemperature(day.temperatureHigh) : convertToF(formatTemperature(day.temperatureHigh))} {unit==="celsius" ? "C°" : "F°"}</td>
                 <td>{formatToPercentage(day.humidity)} %</td>
                 <td>{formatToPercentage(day.precipProbability)} %</td>
                 <td>{day.summary}</td>

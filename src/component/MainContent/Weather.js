@@ -5,7 +5,8 @@ const Weather = ({
   temperature,
   humidity,
   precipProbability,
-  summary
+  summary,
+  unit
 }) => {
   const formatTemperature = (temperature) => {
     return Math.floor(temperature);
@@ -18,7 +19,7 @@ const Weather = ({
   return (
     <ul className="info-container">
       {children}
-      <li className="temperature-info">{`${formatTemperature(temperature)} C°`}</li>
+      <li className="temperature-info">{`${formatTemperature(temperature)} ${unit==="celsius" ? "C°" : "F°"}`}</li>
       <div className="extra-info-container">
         <li className="humidity-info">
           <p>Humidity</p>

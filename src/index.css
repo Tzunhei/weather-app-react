@@ -82,6 +82,17 @@ footer {
   .table-container th {
     background-color: #90caf9; }
   .table-container tr:nth-child(even) {
-    background-color: #ffee58; }
+    background-color: #e0e0e0; }
+
+.btn-temp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem; }
+  .btn-temp-container .btn-temp {
+    margin-top: 1rem;
+    padding: .5rem;
+    background-color: #f5f5f5;
+    border: none; }
 
 /*# sourceMappingURL=index.css.map */

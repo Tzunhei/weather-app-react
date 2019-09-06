@@ -1,7 +1,7 @@
 import React from "react";
 import Weather from "./Weather";
 
-const CurrentWeather = ({ data }) => {
+const CurrentWeather = ({ data, unit }) => {
   const dayOfWeekIndex = {
     0: "Sunday",
     1: "Monday",
@@ -27,6 +27,10 @@ const CurrentWeather = ({ data }) => {
     11: "December"
   };
 
+  const convertToF = (celsius) => {
+    return Math.floor(celsius * (9/5) + 32);
+  }
+
   let currentWeather;
   if (data) {
     const forecastDate = new Date(data.time * 1000);
@@ -36,18 +40,16 @@ const CurrentWeather = ({ data }) => {
 
     currentWeather = (
       <Weather
-        temperature={data.temperature}
+        temperature={unit=== "celsius" ? data.temperature: convertToF(data.temperature)}
         humidity={data.humidity}
         precipProbability={data.precipProbability}
         summary={data.summary}
+        unit={unit}
       >
         <li>{`${dayOfWeek} ${day} ${month}`}</li>
       </Weather>
     );
-  } else {
-    currentWeather = <p>Loading...</p>;
   }
-
   return <main>{currentWeather}</main>;
 };
 
